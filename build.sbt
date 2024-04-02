@@ -42,7 +42,7 @@ lazy val model: Project = Project("model", file("model")).settings(
 lazy val playJson: Project = Project("playJson", file("playJson"))
   .settings(
     commonSettings,
-    name := "play-json",
+    name := "scalalib-play-json",
     libraryDependencies ++= List(
       "org.playframework" %% "play-json" % "3.0.2"
     )
