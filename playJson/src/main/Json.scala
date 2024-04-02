@@ -1,9 +1,8 @@
 package scalalib
 package json
 
-import play.api.libs.json.{ Json as PlayJson, * }
-
 import scala.util.NotGiven
+import play.api.libs.json.{ Json as PlayJson, * }
 
 object Json:
 
@@ -104,7 +103,6 @@ object Json:
   given Writes[MaxPerPage] with
     def writes(m: MaxPerPage) = JsNumber(m.value)
 
-  import scalalib.paginator.Paginator
   given paginatorWrite[A: Writes]: OWrites[Paginator[A]] = OWrites[Paginator[A]]: p =>
     PlayJson.obj(
       "currentPage"        -> p.currentPage,
